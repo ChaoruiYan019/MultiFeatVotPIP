@@ -6,4 +6,4 @@ Peptides that induce pro-inflammatory cytokines are referred to as pro-inflammat
 
 ## Dataset download
 
-Training data and independent test data can be downloaded from [here](https://github.com/Superzchen/iLearnPlus/blob/main/data/Lysine_crotonylation.txt ).
+Training data and independent test data can be downloaded from [here](https://github.com/ChaoruiYan019/MultiFeatVotPIP/tree/main/Dataset).
