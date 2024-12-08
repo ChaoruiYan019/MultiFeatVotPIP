@@ -1,13 +1,37 @@
-# *MultiFeatVotPIP*: A Tool for Predicting Pro-inflammatory Inducing Peptides
+# Peptide Sequence Classification with GNN and Traditional Models
 
-## Introduction
+This project aims to classify peptide sequences as proinflammatory or non-proinflammatory using various machine learning models, including traditional models like SVM, Naive Bayes, and Random Forest, as well as a Graph Neural Network (GNN). The dataset contains peptide sequences labeled as either proinflammatory (`1`) or non-proinflammatory (`0`).
 
-Peptides that induce pro-inflammatory cytokines are referred to as pro-inflammatory inducing peptides (PIPs), and are considered potential therapeutic candidates for alleviating and curing various diseases. The current biological analysis methods for identifying specific peptides present drawbacks, including time consumption, high costs, and challenges in high-throughput application. Hence, researchers tend to prefer sequence-based computational approaches to screen potential candidates before experimental verification to enhance efficiency and reduce costs.With the continual updating of the Immune Epitope Database (IEDB) and further research, there is hope for more tools based on new technologies and methodologies to be developed, improving and enriching the capability to predict the pro-inflammatory response of inducing peptides. These new tools might integrate more bioinformatics and machine learning algorithms, leveraging large datasets for training and validation to enhance the accuracy and reliability of predictions.To address this, we have developed a new computational method that initially encodes the raw sequences into feature vectors, followed by predictions made through basic learning classifiers. The final prediction is then accomplished via a Voting ensemble learning strategy.
+## Models Evaluated:
 
-![image](https://github.com/ChaoruiYan019/MultiFeatVotPIP/blob/main/image/model.png)
+1. **Support Vector Machine (SVM)**:
+   - Accuracy on test data: 50%
+   - The SVM model performs well on one class (non-proinflammatory) but fails to predict the other class (proinflammatory).
 
-## Dataset download
+2. **Naive Bayes**:
+   - Accuracy on test data: 50%
+   - Similar to the SVM model, Naive Bayes shows poor performance in classifying the proinflammatory class.
 
-Training data and independent test data can be downloaded from [here](https://github.com/ChaoruiYan019/MultiFeatVotPIP/tree/main/Dataset).
+3. **Random Forest**:
+   - Accuracy on test data: 50%
+   - Random Forest also demonstrates overfitting, showing perfect performance on the training data but poor generalization on test data.
 
-Code_analysis [here](https://github.com/S18-Niloy/MultiFeatVotPIP/tree/Analysis_Niloy/Code).
+4. **Graph Neural Network (GNN)**:
+   - The GNN model achieved 100% training accuracy but also overfitted.
+   - Epoch loss drops significantly, but the model only classifies the non-proinflammatory class correctly, resulting in 50% test accuracy.
+
+## Observations:
+- **Overfitting**: All models, including the GNN, suffer from overfitting, showing perfect performance on the training data but poor generalization to the test data.
+- **Imbalanced Classes**: The dataset is imbalanced, with a larger number of non-proinflammatory peptides compared to proinflammatory peptides, which might be contributing to the bias in predictions.
+
+## Solutions Needed:
+- **Overfitting Solutions**: Help is needed to address the overfitting issue in all models. Suggestions on regularization techniques or strategies to improve generalization would be appreciated.
+- **Class Imbalance**: How to handle the class imbalance to ensure that the model doesn’t bias toward the majority class (non-proinflammatory).
+- **Evaluation Metrics**: We are also looking for suggestions to improve evaluation metrics for better understanding of model performance.
+
+
+## Get Involved
+
+If you have suggestions or solutions to improve this model's performance or any other ideas, feel free to open an issue or submit a pull request. We are looking for ways to address the overfitting issue and improve the model's ability to predict class 1 (proinflammatory) correctly.
+
+
