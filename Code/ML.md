@@ -61,18 +61,6 @@ This project focuses on classifying peptide sequences as proinflammatory or non-
 - **Alternative Metrics**: Use metrics such as F1-score or MCC (Matthews Correlation Coefficient) instead of accuracy for more balanced evaluation.
 - **Hyperparameter Tuning**: Perform grid search or random search for hyperparameter optimization to improve model performance.
 
-## How to Run the Code
-
-1. Clone this repository to your local machine.
-2. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. Run the model training script:
-    ```bash
-    python scripts/train_models.py
-    ```
-4. The trained models and evaluation results will be saved in the `models/` directory.
 
 ## Get Involved
 
