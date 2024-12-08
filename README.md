@@ -1,41 +1,41 @@
-# Peptide Sequence Classification with GNN and Traditional Models
+# Proinflammatory Peptide Classification using Machine Learning
 
-This project aims to classify peptide sequences as proinflammatory or non-proinflammatory using various machine learning models, including traditional models like SVM, Naive Bayes, and Random Forest, as well as a Graph Neural Network (GNN). The dataset contains peptide sequences labeled as either proinflammatory (`1`) or non-proinflammatory (`0`).
+This repository contains code for classifying proinflammatory peptides (PIPs) using machine learning models. The dataset consists of peptide sequences labeled as **proinflammatory (1)** and **non-proinflammatory (0)**. We used **Random Forest** and **Graph Neural Networks (GNN)** for classification.
 
-## Models Evaluated:
+## Project Overview
 
-1. **Support Vector Machine (SVM)**:
-   - Accuracy on test data: 50%
-   - MCC score: 0.00
-   - The SVM model performs well on one class (non-proinflammatory) but fails to predict the other class (proinflammatory).
+Peptides that induce proinflammatory cytokines (PIPs) play a significant role in the inflammatory response and are crucial for understanding various diseases. This project aims to predict whether a given peptide is proinflammatory or not based on its sequence.
 
-2. **Naive Bayes**:
-   - Accuracy on test data: 50%
-   - MCC score: 0.00
-   - Similar to the SVM model, Naive Bayes shows poor performance in classifying the proinflammatory class.
+## Datasets
 
-3. **Random Forest**:
-   - Accuracy on test data: 50%
-   - MCC score: 0.00
-   - Random Forest also demonstrates overfitting, showing perfect performance on the training data but poor generalization on test data.
+The dataset consists of peptide sequences and their corresponding labels. The sequences are analyzed using two models:
+1. **Random Forest (RF) Classifier**: A traditional machine learning model that performs well with structured feature sets.
+2. **Graph Neural Networks (GNN)**: A more advanced method leveraging the relationships between amino acids within peptide sequences.
 
-4. **Graph Neural Network (GNN)**:
-   - Training Accuracy: 100%
-   - Test Accuracy: 50%
-   - MCC score: 0.00
-   - The GNN model achieved 100% training accuracy but also overfitted. It only classifies the non-proinflammatory class correctly, resulting in 50% test accuracy.
+- **Train Dataset**: 2872 samples
+- **Test Dataset**: 342 samples
 
-## Observations:
-- **Overfitting**: All models, including the GNN, suffer from overfitting, showing perfect performance on the training data but poor generalization to the test data.
-- **Imbalanced Classes**: The dataset is imbalanced, with a larger number of non-proinflammatory peptides compared to proinflammatory peptides, which might be contributing to the bias in predictions.
+## Models Used
 
-## Solutions Needed:
-- **Overfitting Solutions**: Help is needed to address the overfitting issue in all models. Suggestions on regularization techniques or strategies to improve generalization would be appreciated.
-- **Class Imbalance**: How to handle the class imbalance to ensure that the model doesn’t bias toward the majority class (non-proinflammatory).
-- **Evaluation Metrics**: We are also looking for suggestions to improve evaluation metrics for better understanding of model performance, particularly the MCC score, which is currently very low.
+### 1. **Random Forest Classifier**
+Random Forest is an ensemble learning method that constructs multiple decision trees to improve the accuracy and robustness of predictions.
 
-## Get Involved
+### 2. **Graph Neural Networks (GNN)**
+GNN models leverage the structure of the peptide sequences, considering the relationships between amino acids and their spatial configurations.
 
-If you have suggestions or solutions to improve this model's performance or any other ideas, feel free to open an issue or submit a pull request. We are looking for ways to address the overfitting issue and improve the model's ability to predict class 1 (proinflammatory) correctly.
+## Results
 
+### Random Forest Model
+- **Confusion Matrix**:  
+  ```plaintext
+  [[135  36]  
+   [108  63]]
+## Results
 
+### Random Forest Model
+- **Test Accuracy**: 57.89%
+- **Test MCC**: 0.17
+
+### Graph Neural Network Model
+- **Test Accuracy**: 58.77%
+- **Test MCC**: 0.18
