@@ -5,7 +5,7 @@ This project focuses on classifying peptide sequences into proinflammatory (labe
 ## Project Highlights
 - Implemented **TF-IDF** feature extraction with mono-, bi-, and tri-grams as well as gapped bigrams and trigrams.
 - Explored multiple machine learning models:
-  - ** RandomForestClassifier**
+  -  RandomForestClassifier
 
 ## Dataset Description
 The dataset includes peptide sequences labeled as:
