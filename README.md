@@ -1,11 +1,36 @@
-# *MultiFeatVotPIP*: A Tool for Predicting Pro-inflammatory Inducing Peptides
+# Peptide Sequence Analysis Using Machine Learning Models
 
-## Introduction
+This project focuses on classifying peptide sequences into proinflammatory (label: 1) and non-proinflammatory (label: 0) categories using various machine learning models and feature extraction techniques. The models are evaluated using performance metrics including **accuracy**, **confusion matrix**, and **Matthew's Correlation Coefficient (MCC)** to ensure robust performance evaluation.
 
-Peptides that induce pro-inflammatory cytokines are referred to as pro-inflammatory inducing peptides (PIPs), and are considered potential therapeutic candidates for alleviating and curing various diseases. The current biological analysis methods for identifying specific peptides present drawbacks, including time consumption, high costs, and challenges in high-throughput application. Hence, researchers tend to prefer sequence-based computational approaches to screen potential candidates before experimental verification to enhance efficiency and reduce costs.With the continual updating of the Immune Epitope Database (IEDB) and further research, there is hope for more tools based on new technologies and methodologies to be developed, improving and enriching the capability to predict the pro-inflammatory response of inducing peptides. These new tools might integrate more bioinformatics and machine learning algorithms, leveraging large datasets for training and validation to enhance the accuracy and reliability of predictions.To address this, we have developed a new computational method that initially encodes the raw sequences into feature vectors, followed by predictions made through basic learning classifiers. The final prediction is then accomplished via a Voting ensemble learning strategy.
+## Project Highlights
+- Implemented **TF-IDF** feature extraction with mono-, bi-, and tri-grams as well as gapped bigrams and trigrams.
+- Explored multiple machine learning models:
+  -  RandomForestClassifier
 
-![image](https://github.com/ChaoruiYan019/MultiFeatVotPIP/blob/main/image/model.png)
+## Dataset Description
+The dataset includes peptide sequences labeled as:
+- `1`: Proinflammatory
+- `0`: Non-proinflammatory
 
-## Dataset download
+Columns:
+- **peptide_sequence**: The peptide sequence to classify.
+- **label**: Binary classification label.
 
-Training data and independent test data can be downloaded from [here](https://github.com/ChaoruiYan019/MultiFeatVotPIP/tree/main/Dataset).
+## Feature Extraction
+### TF-IDF
+- Features are generated using:
+  - **Monograms**
+  - **Bigrams**
+  - **Trigrams**
+  - **Gapped bigrams** (e.g., `AB_X_CD`)
+  - **Gapped trigrams** (e.g., `AB_X_Y_CD`)
+- TF-IDF scores reflect the importance of sequence patterns in the corpus, aiding in distinguishing proinflammatory from non-proinflammatory sequences.
+
+## Model Results
+###  RandomForestClassifier
+- **Validation Accuracy**: 65.73%
+- **Test Accuracy**: 59.06%
+- **Validation MCC**: 0.28
+- **Test MCC**: 0.19
+
+
